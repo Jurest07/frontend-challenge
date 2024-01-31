@@ -1,0 +1,142 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.header {
+    position: fixed;
+    background-color: rgba(33, 150, 243, 1);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.24);
+    display: flex;
+    width: 100vw;
+    height: 6.5vh;
+    color: white;
+    align-items: center;
+    padding: 0 4.3vw;
+    z-index: 10;
+    font-family: "Roboto";
+    font-size: 14px;
+}
+
+.all_cats,
+.liked_cats {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.all_cats {
+    width: 8vw;
+    cursor: pointer;
+}
+
+.liked_cats {
+    width: 12vw;
+    cursor: pointer;
+}
+
+.active_page {
+    background-color: rgba(30, 136, 229, 1)
+}
+
+.maincontent {
+    padding: 2% 0;
+}
+
+.cell-container{
+    position: relative;
+    margin-right: 3vw;
+}
+
+.cell-border{
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    z-index: -1;
+    transform: translate(-8%, -8%);
+    box-shadow: 0px 6px 5px 0px rgba(0, 0, 0, 0.24);
+    width: 120%;
+    height: 120%;
+}
+
+.cell {
+    height: 15vw;
+    width: 15vw;
+    overflow: hidden;
+    position: relative;
+}
+
+.cell-container:hover .cell-border{
+    opacity: 1;
+}
+
+.cell:hover .heart-container{
+    opacity: 1;
+}
+
+/* Images crop and center to col-lg box up to 1000% centering (if 100% if it's 3x the size it doesn't fully center)Idk man why? projectors and stuff? */
+.cell img {
+    display: block;
+    position: absolute;
+    left: -1000%;
+    right: -1000%;
+    top: -1000%;
+    bottom: -1000%;
+    margin: auto;
+    min-height: 100%;
+    min-width: 100%;
+}
+.row{
+    display: flex;
+    width: 87vw;
+    margin: 0 6.5vw 3vw 6.5vw;
+}
+
+.row .cell-container:last-child{
+    margin-right: 0vw;
+}
+.row:first-child{
+    margin-top: 4vw;
+}
+.heart-container{
+    position: absolute;
+    top: 80%;
+    left: 80%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    height: 3vw;
+    width: 3vw;
+}
+.svgimg{
+    cursor: pointer;
+}
+.svgimg:hover{
+    fill: rgba(242, 78, 30, 1);
+}
+.button-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5vh;
+}
+.load-button{
+    width: 20%;
+    text-align: center;
+    font-family: 'Roboto';
+    font-size: 14px;
+    color: black;
+    transition: color 0.2s ease-in-out;
+    line-height: 21px;
+    cursor: pointer;
+}
+.load-button:hover{
+    color: rgb(16, 187, 4);
+}
+#grid2{
+    display: none;
+}
